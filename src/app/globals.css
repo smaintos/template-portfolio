@@ -1,4 +1,27 @@
+/* src/app/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: #1a1919;
+}
+
+body {
+  background-color: var(--background);
+}
+
+@layer utilities {
+  .ambilight {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 1;
+  }
+}

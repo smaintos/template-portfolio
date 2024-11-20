@@ -35,6 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+
 ```
 template-portfolio
 ├─ .eslintrc.json
@@ -72,14 +73,24 @@ template-portfolio
 │  ├─ objects
 │  │  ├─ 00
 │  │  │  └─ 4145cddf3f9db91b57b9cb596683c8eb420862
+│  │  ├─ 06
+│  │  │  └─ 50cdea5cce6adaf55b6346fa8dc0c96f4c5986
 │  │  ├─ 10
 │  │  │  └─ 9807be0f73749162de63805d55dd3b669c248d
+│  │  ├─ 16
+│  │  │  └─ 9130a89ebdad78e879fb58bd1b7d77fc6c67cc
 │  │  ├─ 1a
 │  │  │  └─ 69fd2a450afc3bf47e08b22c149190df0ffdb4
 │  │  ├─ 1b
 │  │  │  └─ 62daacff96dad6584e71cd962051b82957c313
+│  │  ├─ 1e
+│  │  │  └─ 829458a3a477f7243592b6707bc319e9f44228
+│  │  ├─ 20
+│  │  │  └─ 627994d2c83f9c34609c2fec4318eae91b71a2
 │  │  ├─ 37
 │  │  │  └─ 224185490e6db2d26a574d66d4d476336bf644
+│  │  ├─ 3c
+│  │  │  └─ 0f287a540a729da98485a4fe662095fd5b9098
 │  │  ├─ 45
 │  │  │  └─ cf93fbd7a3275c49b637465f27e8519cf79785
 │  │  ├─ 51
@@ -92,12 +103,18 @@ template-portfolio
 │  │  │  └─ 44d023a32dceeb64a130ddc5f66208c8612498
 │  │  ├─ 71
 │  │  │  └─ 8d6fea4835ec2d246af9800eddb7ffb276240c
+│  │  ├─ 72
+│  │  │  └─ bf6e96c5cc3aad47837e55e8695fd5d7b84f7d
 │  │  ├─ 77
 │  │  │  └─ 053960334e2e34dc584dea8019925c3b4ccca9
 │  │  ├─ 81
 │  │  │  └─ 79d1d79b11b01ab54136d0b056b86896d5c19b
+│  │  ├─ 85
+│  │  │  └─ 47e4e9de08d41e82bf2bad9a27a15de179e1cc
 │  │  ├─ 88
 │  │  │  └─ b4698b0f6d2f02294c2442204040e53d01357e
+│  │  ├─ 90
+│  │  │  └─ 749333d79d1ff5431728ae3c8608657386506c
 │  │  ├─ 93
 │  │  │  └─ 98d8eff11d7a1a9e6aaf0d9185328e3cf868fc
 │  │  ├─ 9b
@@ -112,6 +129,10 @@ template-portfolio
 │  │  │  └─ b2a44f6ebc70c450043c05a002e7a93ba5d651
 │  │  ├─ b4
 │  │  │  └─ b313ab02d2c2301c99a1dd3fba4d3eed4e7007
+│  │  ├─ bc
+│  │  │  └─ 33613e07e008affb3c3f761953ceab0c3bce74
+│  │  ├─ bd
+│  │  │  └─ 30bc9dd6fded9e283407e934d8a909539a3396
 │  │  ├─ c0
 │  │  │  └─ 63fb4755667920face80b6932e7ae1430a4f1b
 │  │  ├─ c1
@@ -121,6 +142,8 @@ template-portfolio
 │  │  │  └─ d9ed350daea316f18141abd6738eb5b16ba3bd
 │  │  ├─ ca
 │  │  │  └─ 6bb699c3f972d000fd593ebaa9d3bb053401f9
+│  │  ├─ cf
+│  │  │  └─ 4c8a40a603b8c2f7c7d6be3d77d621afef89f7
 │  │  ├─ d3
 │  │  │  └─ 2cc78b89fc9af2b1caf304864e10f041df05e6
 │  │  ├─ e2
@@ -131,6 +154,8 @@ template-portfolio
 │  │  │  └─ 25e768b72f1ea08215b88597c7584aea4c3f00
 │  │  ├─ f2
 │  │  │  └─ ae185cbfd16946a534d819e9eb03924abbcc49
+│  │  ├─ f4
+│  │  │  └─ 56c1ac90229c0f09c3620fd35d1d5e1caec214
 │  │  ├─ fc
 │  │  │  └─ b741a341df889205f9868e01cdef51cc530ae9
 │  │  ├─ info
@@ -147,6 +172,7 @@ template-portfolio
 ├─ package.json
 ├─ postcss.config.mjs
 ├─ public
+│  ├─ background.png
 │  ├─ file.svg
 │  ├─ globe.svg
 │  ├─ next.svg
@@ -164,7 +190,9 @@ template-portfolio
 │  │  ├─ globals.css
 │  │  ├─ layout.tsx
 │  │  ├─ owner
-│  │  │  └─ page.tsx
+│  │  │  ├─ page.tsx
+│  │  │  └─ post
+│  │  │     └─ page.tsx
 │  │  └─ page.tsx
 │  ├─ components
 │  │  └─ NavBar.tsx

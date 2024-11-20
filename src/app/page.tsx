@@ -15,14 +15,12 @@ export default function Home() {
     if (error) {
       console.error('Erreur lors de la récupération des images :', error);
     } else if (list) {
-      const urls = await Promise.all(
-        list.map(async (file) => {
-          const { data } = supabase.storage
-            .from('uploads')
-            .getPublicUrl(file.name);
-          return data.publicUrl;
-        })
-      );
+      const urls = list.map((file) => {
+        const { data } = supabase.storage
+          .from('uploads')
+          .getPublicUrl(file.name);
+        return data.publicUrl;
+      });
       setImages(urls);
     }
   };
@@ -32,13 +30,30 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="p-6">
-      <h1 className="text-4xl font-bold mb-4">Bienvenue sur mon portfolio</h1>
-
-      <div className="grid grid-cols-3 gap-4">
-        {images.map((url, index) => (
-          <img key={index} src={url} alt={`Image ${index}`} className="w-full h-auto" />
-        ))}
+    <main className="relative p-6 min-h-screen">
+      <br></br>      <br></br>      <br></br>      <br></br>
+      <div className="relative z-10">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl w-full">
+            {images.map((url, index) => (
+              <div
+                key={index}
+                className="relative w-full transform transition-transform duration-300 hover:scale-105"
+                style={{ paddingBottom: '150%' }}
+              >
+                <div
+                  className="ambilight"
+                  style={{ backgroundImage: `url(${url})` }}
+                ></div>
+                <img
+                  src={url}
+                  alt={`Image ${index}`}
+                  className="absolute top-0 left-0 w-full h-full object-cover z-10"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </main>
   );
