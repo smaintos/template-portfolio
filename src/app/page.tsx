@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
+
 export default function Home() {
   const [images, setImages] = useState<string[]>([]);
 
@@ -30,7 +31,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative p-6 min-h-screen">
+    <main className="relative p-6 min-h-screen"  style={{ backgroundColor: '#101110' }} >
       <br></br>      <br></br>      <br></br>      <br></br>
       <div className="relative z-10">
         <div className="flex justify-center">

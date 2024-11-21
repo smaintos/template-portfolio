@@ -1,3 +1,4 @@
+// tailwind.config.js
 import type { Config } from "tailwindcss";
 
 export default {
@@ -11,6 +12,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#000000", // Bleu pour les survols et les états actifs
+      },
+      fontSize: {
+        sm: ["0.875rem", { lineHeight: "1.25rem" }], // Taille de texte petite
       },
     },
   },

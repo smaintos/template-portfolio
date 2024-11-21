@@ -19,11 +19,14 @@ export default function OwnerPostPage() {
     setIsMounted(true);
 
     const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      const { data, error } = await supabase.auth.getSession();
+      console.log('Session data:', data);
+      console.log('Session error:', error);
+      if (error || !data.session) {
         router.push('/owner');
       } else {
-        setSession(session);
+        setSession(data.session);
+        console.log('Session set:', data.session);
       }
     };
 
@@ -70,6 +73,7 @@ export default function OwnerPostPage() {
       setImage(null); // Réinitialiser l'état de l'image
     } catch (error) {
       console.error("Erreur lors du téléchargement de l'image :", error);
+      alert("Erreur lors du téléchargement de l'image.");
     } finally {
       setUploading(false);
     }
@@ -84,28 +88,33 @@ export default function OwnerPostPage() {
   }
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl">Bienvenue sur la page des posts du propriétaire</h1>
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-200"
-        >
-          Déconnexion
-        </button>
-      </div>
+    <main className="relative p-6 min-h-screen">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl mb-6">Bienvenue sur la page des posts du propriétaire</h1>
 
-      {/* Formulaire d'upload d'image */}
-      <div className="mb-4">
-        <input type="file" accept="image/*" onChange={handleFileChange} />
-        <button
-          onClick={uploadImage}
-          disabled={uploading}
-          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-400"
-        >
-          {uploading ? 'Téléchargement...' : 'Uploader'}
-        </button>
+        {/* Formulaire d'upload d'image et bouton Déconnexion */}
+        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            className="w-full md:w-auto px-4 py-2 bg-transparent border border-foreground text-foreground rounded"
+          />
+          <button
+            onClick={uploadImage}
+            disabled={uploading}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 disabled:bg-gray-400 w-full md:w-auto"
+          >
+            {uploading ? 'Téléchargement...' : 'Uploader'}
+          </button>
+          <button
+            onClick={handleLogout}
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-300 w-full md:w-auto"
+          >
+            Déconnexion
+          </button>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

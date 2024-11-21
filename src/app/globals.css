@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #1a1919;
+  --background: #101110 ;
 }
 
 body {
@@ -25,3 +25,4 @@ body {
     z-index: 1;
   }
 }
+
