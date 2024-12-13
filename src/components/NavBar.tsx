@@ -96,25 +96,6 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-
-            {/* Optionnel : Avatar dans le Menu Mobile */}
-            {/* <div className="flex items-center gap-4 p-3 rounded-lg bg-transparent shadow-none">
-              <div className="w-12 h-12 rounded-full bg-gray-400 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop"
-                  alt="Avatar"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-400">
-                  William
-                </p>
-                <p className="text-sm text-gray-400">
-                  Mariamon
-                </p>
-              </div>
-            </div> */}
           </div>
         )}
       </nav>
